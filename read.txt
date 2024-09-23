@@ -18,6 +18,20 @@ git reflog                 //记录每次的命令，那么就可以通过git re
 
 git reset --hard commit  ID                //返回到之前的版本
 
+git config --global user.name ""		//设置用户信息
+git config --global user.email ""
+
+ssh-keygen -t rsa -b 4096 -C "youremail" //创建SSH密钥
+
+git remote add origin https://github.com/l-y-shiki/git_test.git			//设置上传仓库
+
+git branch -M main		//简单解释一下这个命令，这是用于将当前仓库的默认分支名称从旧名称（如master）更改为main。这在许多情况下是为了避免使用具有历史负担的术语，比如master/slave或master分支的历史含义。
+
+git push -u origin main			//由于远程仓库是空的，第一次推送main分支时，加上了-u参数，Git 不但会把本地的main分支内容推送的远程新的main分支，还会把本地的main分支和远程的main分支关联起来，在以后的推送或者拉取时就可以简化命令。执行命令后，会提示登录 GitHub 的账号，点击Sign in with your browser。
+
+git push origin main		//更新远程仓库
+
+git remote set-url origin https://github.com/l-y-shiki/git_test.git		//更改远程仓库为新地址
 
 如果执行git commit之后，发现提交说明写的有问题，可以通过git commit --amend命令，修改最近一次的提交说明。输入命令后，会用 VIM 编辑器打开提交信息（还是要会 VIM ，不会的先去查一下怎么用）。
 
