@@ -1,0 +1,29 @@
+git status     //查看状态
+
+git add        //存储到暂存区
+
+git add.      //添加工作区的全部文件到暂存区
+
+git commit   //将暂存区的文件传入仓库
+
+git diff         //查看修改内容
+
+git log       //查看近期的提交记录，提交记录以时间倒叙输出。
+
+git log --pretty=oneline       //查看简化版的提交记录信息：
+
+git reset --hard              // 版本回退
+
+git reflog                 //记录每次的命令，那么就可以通过git reflog找到之前版本的 commit ID。
+
+git reset --hard commit  ID                //返回到之前的版本
+
+
+如果执行git commit之后，发现提交说明写的有问题，可以通过git commit --amend命令，修改最近一次的提交说明。输入命令后，会用 VIM 编辑器打开提交信息（还是要会 VIM ，不会的先去查一下怎么用）。
+
+
+回到正题，由于某种原因，需要将版本库回退到“Added code and executable files.”这次的提交版本，可以使用git reset --hard命令来回退。但是有个前提，就是要让 Git 知道当前是什么版本，而且还要知道回退到哪个版本。
+
+在 Git 中，用 HEAD 来表示当前版本，HEAD^ 表示上一个，HEAD^^ 表示上上一个版本，HEAD~100 表示往上 100 个版本。由上图可知，当前的 HEAD 就指在最新提交的版本上，回退到“Added code and executable files.”这次的提交版本，就是当前版本的上一次，那么执行下面命令即可：git reset --hard HEAD^
+
+那么假设过了一段时间，需要返回之前的版本，也非常简单，只要能找到之前版本 commit ID，就可以通过git reset命令回退就行。Git 提供了git reflog命令用于记录每次的命令，那么就可以通过git reflog找到之前版本的 commit ID。
