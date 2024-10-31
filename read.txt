@@ -2,9 +2,11 @@ git status     //查看状态
 
 git add        //存储到暂存区
 
-git add.      //添加工作区的全部文件到暂存区
+git add .      //添加工作区的全部文件到暂存区
 
 git commit   //将暂存区的文件传入仓库
+
+git commit -m"备注信息"  //将暂存区的文件传入仓库
 
 git diff         //查看修改内容
 
@@ -24,6 +26,8 @@ git config --global user.email ""
 ssh-keygen -t rsa -b 4096 -C "youremail" //创建SSH密钥
 
 git remote add origin https://github.com/l-y-shiki/git_test.git			//设置上传仓库
+
+git remote -v			//查看仓库是否连接成功
 
 git branch -M main		//简单解释一下这个命令，这是用于将当前仓库的默认分支名称从旧名称（如master）更改为main。这在许多情况下是为了避免使用具有历史负担的术语，比如master/slave或master分支的历史含义。
 
